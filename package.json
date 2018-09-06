@@ -10,11 +10,12 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src/js -d assets/js && cp node_modules/fetch-jsonp/build/fetch-jsonp.js assets/js"
+    "build": "babel src/js -d assets/js && cp node_modules/fetch-jsonp/build/fetch-jsonp.js assets/js && cp node_modules/es6-promise/dist/es6-promise.auto.min.js assets/js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "es6-promise": "^4.2.4",
     "fetch-jsonp": "^1.1.3"
   }
 }

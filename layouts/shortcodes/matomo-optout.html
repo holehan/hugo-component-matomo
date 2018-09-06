@@ -1,9 +1,10 @@
 <div class="MatomoOptout">
+{{- $es6Promise := resources.Get "js/es6-promise.auto.min.js" | fingerprint -}}
 {{- $fetchJsonp := resources.Get "js/fetch-jsonp.js" -}}
 <script>
 if (/MSIE \d|Trident.*rv:/.test(navigator.userAgent))
   document.write(
-    '<script src="https:\/\/cdn.jsdelivr.net\/npm\/es6-promise@4\/dist\/es6-promise.auto.min.js" async><\/script>'
+    '<script src="' + '{{ $es6Promise.RelPermalink }}' + '"><\/script>'
   );
 </script>
 {{- $matomoOptout := resources.Get "js/matomo-optout.js" -}}
