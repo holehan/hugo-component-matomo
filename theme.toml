@@ -1,0 +1,11 @@
+name = "Matomo Components"
+license = "MIT"
+licenselink = "https://github.com/holehan/hugo-components-matomo/blob/master/LICENSE"
+description = "Hugo components for Matomo Analytics"
+homepage = "https://github.com/holehan/hugo-components-matomo"
+tags = ["Matomo", "Piwik", "analytics", "tracking", "GDPR", "DSGVO"]
+min_version = "0.46"
+
+[author]
+  name = "Florian Grässle"
+  homepage = "https://holehan.org/"
