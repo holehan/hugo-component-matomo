@@ -69,11 +69,11 @@ function updateText() {
   var trackText = document.querySelector('.MatomoOptout-trackMessage');
   var untrackText = document.querySelector('.MatomoOptout-untrackMessage');
   if (piwikAjaxOptOutIsTracked === true) {
-    trackText.style.display = 'block';
-    untrackText.style.display = 'none';
+    trackText.classList.remove('is-hidden');
+    untrackText.classList.add('is-hidden');
   } else {
-    trackText.style.display = 'none';
-    untrackText.style.display = 'block';
+    trackText.classList.add('is-hidden');
+    untrackText.classList.remove('is-hidden');
   }
 }
 
