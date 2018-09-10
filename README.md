@@ -65,7 +65,7 @@ matomo:
 
 Use the following classes to style the optout component to your heart's desire.
 
-```
+```css
 MatomoOptout {}
 MatomoOptout-trackMessage {}
 MatomoOptout-trackMessage.is-hidden {}
