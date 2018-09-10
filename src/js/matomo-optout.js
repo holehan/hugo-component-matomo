@@ -27,7 +27,7 @@ function piwikAjaxOptOutTrack() {
  *
  * @author Florian Grässle <hallo@holehan.org>
  */
-function piwikAjaxOptOutUntrack() {
+function piwikAjaxOptOutBlock() {
   url = `${matomoUrl}/index.php?module=API&method=AjaxOptOut.doIgnore&format=json`;
 
   fetchJsonp(url)
@@ -70,13 +70,13 @@ function piwikAjaxOptOutStatus() {
  */
 function updateText() {
   const trackText = document.querySelector('.MatomoOptout-trackMessage');
-  const untrackText = document.querySelector('.MatomoOptout-untrackMessage');
+  const blockText = document.querySelector('.MatomoOptout-blockMessage');
   if (piwikAjaxOptOutIsTracked === true) {
     trackText.classList.remove('is-hidden');
-    untrackText.classList.add('is-hidden');
+    blockText.classList.add('is-hidden');
   } else {
     trackText.classList.add('is-hidden');
-    untrackText.classList.remove('is-hidden');
+    blockText.classList.remove('is-hidden');
   }
 }
 
@@ -94,14 +94,14 @@ function documentReady() {
   };
 
   // Add listener for the "do not track" button.
-  const doUntrackBtn = document.querySelector('.MatomoOptout-button--untrack');
-  doUntrackBtn.onclick = function(event) {
+  const doBlockBtn = document.querySelector('.MatomoOptout-button--block');
+  doBlockBtn.onclick = function(event) {
     event.preventDefault();
     event.stopPropagation();
 
     piwikAjaxOptOutStatus();
     if (piwikAjaxOptOutIsTracked === true) {
-      piwikAjaxOptOutUntrack();
+      piwikAjaxOptOutBlock();
     }
   };
 }

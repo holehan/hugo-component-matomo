@@ -12,7 +12,7 @@
 <script data-id="matomo-optout" data-matomo-optout-url="{{ $.Site.Params.matomoUrl }}" src="{{ $matomoOptoutBundle.RelPermalink }}" integrity="{{ $matomoOptoutBundle.Data.Integrity }}" async></script>
 {{ end }}
 <div class="MatomoOptout-trackMessage is-hidden">{{ $.Page.Param "matomo.track.message" | default "You are being watched." | markdownify }}</div>
-<div class="MatomoOptout-untrackMessage">{{ $.Page.Param "matomo.untrack.message" | default "You are not tracked." | markdownify }}</div>
+<div class="MatomoOptout-blockMessage">{{ $.Page.Param "matomo.block.message" | default "You are not tracked." | markdownify }}</div>
 <button class="MatomoOptout-button MatomoOptout-button--track">{{ $.Page.Param "matomo.track.button" | default "Allow tracking"}}</button> 
-<button class="MatomoOptout-button MatomoOptout-button--untrack">{{ $.Page.Param "matomo.untrack.button" | default "Disable tracking"}}</button>
+<button class="MatomoOptout-button MatomoOptout-button--block">{{ $.Page.Param "matomo.block.button" | default "Disable tracking"}}</button>
 </div>
