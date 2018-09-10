@@ -83,16 +83,16 @@ function documentReady() {
 
   // Add listener for the "do track" button.
   var doTrackBtn = document.querySelector('.MatomoOptout-button--track');
-  doTrackBtn.onclick = function (event) {
+  doTrackBtn.addEventListener('click', function (event) {
     event.preventDefault();
     event.stopPropagation();
 
     piwikAjaxOptOutTrack();
-  };
+  });
 
   // Add listener for the "do not track" button.
   var doBlockBtn = document.querySelector('.MatomoOptout-button--block');
-  doBlockBtn.onclick = function (event) {
+  doBlockBtn.addEventListener('click', function (event) {
     event.preventDefault();
     event.stopPropagation();
 
@@ -100,7 +100,7 @@ function documentReady() {
     if (piwikAjaxOptOutIsTracked === true) {
       piwikAjaxOptOutBlock();
     }
-  };
+  });
 }
 
 // Check if the DOMContentLoaded has already been completed
