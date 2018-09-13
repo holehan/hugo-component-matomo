@@ -1,9 +1,4 @@
 <div class="MatomoOptout">
-<style>
-.is-hidden {
-  display: none;
-}
-</style>
 {{- $es6Promise := resources.Get "js/es6-promise.auto.min.js" | fingerprint -}}
 {{- $promisePolyfill := resources.Get "js/promise-polyfill.js" | minify | fingerprint -}}
 {{- $fetchJsonp := resources.Get "js/fetch-jsonp.js" -}}
@@ -11,13 +6,21 @@
 <script data-id="promise-polyfill" data-promise-polyfill-url="{{ $es6Promise.RelPermalink }}" src="{{ $promisePolyfill.RelPermalink }}"></script>
 {{- if .Site.IsServer -}}
 {{ $matomoOptoutBundle := slice $fetchJsonp $matomoOptout | resources.Concat "js/matomo-optout.js" }}
-<script data-id="matomo-optout" data-matomo-optout-url="{{ $.Site.Params.matomoUrl }}" src="{{ $matomoOptoutBundle.Permalink }}" async></script>
+<script data-id="matomo-optout" data-matomo-optout-url="{{ $.Site.Params.matomo.url }}" src="{{ $matomoOptoutBundle.Permalink }}" async></script>
+{{- if ne $.Site.Params.matomo.stylefromassets false -}}
+{{ $matomoStyle := resources.Get "css/matomo-optout.css" }}
+<link rel="stylesheet" href="{{ $matomoStyle.Permalink }}">
+{{- end -}}
 {{- else -}}
 {{ $matomoOptoutBundle := slice $fetchJsonp $matomoOptout | resources.Concat "js/matomo-optout.js" | minify | fingerprint }}
-<script data-id="matomo-optout" data-matomo-optout-url="{{ $.Site.Params.matomoUrl }}" src="{{ $matomoOptoutBundle.RelPermalink }}" integrity="{{ $matomoOptoutBundle.Data.Integrity }}" async></script>
+<script data-id="matomo-optout" data-matomo-optout-url="{{ $.Site.Params.matomo.url }}" src="{{ $matomoOptoutBundle.RelPermalink }}" integrity="{{ $matomoOptoutBundle.Data.Integrity }}" async></script>
+{{- if ne $.Site.Params.matomo.stylefromassets false -}}
+{{ $matomoStyle := resources.Get "css/matomo-optout.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $matomoStyle.Permalink }}" integrity="{{ $matomoStyle.Data.Integrity }}">
+{{- end -}}
 {{ end }}
-<div class="MatomoOptout-trackMessage is-hidden">{{ $.Page.Param "matomo.track.message" | default "You are being watched." | markdownify }}</div>
-<div class="MatomoOptout-blockMessage">{{ $.Page.Param "matomo.block.message" | default "You are not tracked." | markdownify }}</div>
+<div class="MatomoOptout-message MatomoOptout-message--track is-hidden">{{ $.Page.Param "matomo.track.message" | default "You are being watched." | markdownify }}</div>
+<div class="MatomoOptout-message MatomoOptout-message--block">{{ $.Page.Param "matomo.block.message" | default "You are not tracked." | markdownify }}</div>
 <button class="MatomoOptout-button MatomoOptout-button--track">{{ $.Page.Param "matomo.track.button" | default "Allow tracking"}}</button> 
 <button class="MatomoOptout-button MatomoOptout-button--block">{{ $.Page.Param "matomo.block.button" | default "Disable tracking"}}</button>
 </div>
