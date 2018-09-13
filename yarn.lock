@@ -609,8 +609,8 @@ code-point-at@^1.0.0:
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
 commander@^2.11.0:
-  version "2.17.1"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
+  version "2.18.0"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.18.0.tgz#2bf063ddee7c7891176981a2cc798e5754bc6970"
 
 concat-map@0.0.1:
   version "0.0.1"
@@ -659,12 +659,12 @@ detect-libc@^1.0.2:
   resolved "https://registry.yarnpkg.com/detect-libc/-/detect-libc-1.0.3.tgz#fa137c4bd698edf55cd5cd02ac559f91a4c4ba9b"
 
 electron-to-chromium@^1.3.47:
-  version "1.3.63"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.63.tgz#6485f5f4f3375358aa8fa23c2029ada208483b8d"
+  version "1.3.67"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.67.tgz#5e8f3ffac89b4b0402c7e1a565be06f3a109abbc"
 
 es6-promise@^4.2.4:
-  version "4.2.4"
-  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.4.tgz#dc4221c2b16518760bd8c39a52d8f356fc00ed29"
+  version "4.2.5"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.5.tgz#da6d0d5692efb461e082c14817fe2427d8f5d054"
 
 escape-string-regexp@^1.0.2:
   version "1.0.5"
@@ -945,8 +945,8 @@ kind-of@^6.0.0:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
 
 lodash@^4.17.4:
-  version "4.17.10"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
+  version "4.17.11"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
 
 loose-envify@^1.0.0:
   version "1.4.0"
@@ -1018,8 +1018,8 @@ nan@^2.9.2:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.11.0.tgz#574e360e4d954ab16966ec102c0c049fd961a099"
 
 needle@^2.2.1:
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/needle/-/needle-2.2.2.tgz#1120ca4c41f2fcc6976fd28a8968afe239929418"
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/needle/-/needle-2.2.3.tgz#c1b04da378cd634d8befe2de965dc2cfb0fd65ca"
   dependencies:
     debug "^2.1.2"
     iconv-lite "^0.4.4"
@@ -1161,7 +1161,7 @@ rc@^1.2.7:
 
 readable-stream@^2.0.2, readable-stream@^2.0.6:
   version "2.3.6"
-  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
+  resolved "http://registry.npmjs.org/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
   dependencies:
     core-util-is "~1.0.0"
     inherits "~2.0.3"

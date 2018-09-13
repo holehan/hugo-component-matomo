@@ -1,8 +1,8 @@
 {
-  "name": "hugo-components-matomo",
+  "name": "hugo-component-matomo",
   "version": "0.1.0",
   "description": "Adds Matomo user tracking and optout scripts to Hugo",
-  "repository": "https://github.com/holehan/hugo-components-matomo.git",
+  "repository": "https://github.com/holehan/hugo-component-matomo.git",
   "author": "Florian Grässle <hallo@holehan.org>",
   "license": "MIT",
   "browserslist": [
