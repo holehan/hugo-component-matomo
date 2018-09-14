@@ -1,7 +1,7 @@
 {{- if .Site.IsServer -}}
 {{ $trackingScript := resources.Get "js/matomo-tracking.js" }}
-<script data-id="matomo-tracking" data-matomo-tracking-url='{{ $.Site.Param "matomo.url" }}' data-matomo-tracking-id='{{ $.Site.Param "matomo.id" }}' src="{{ $trackingScript.Permalink }}"></script>
+<script data-id="matomo-tracking" data-matomo-tracking-url='{{ $.Site.Params.matomo.url }}' data-matomo-tracking-id='{{ $.Site.Params.matomo.id }}' src="{{ $trackingScript.Permalink }}"></script>
 {{- else -}}
 {{ $trackingScript := resources.Get "js/matomo-tracking.js" | minify | fingerprint }}
-<script data-id="matomo-tracking" data-matomo-tracking-url='{{ $.Site.Param "matomo.url" }}' data-matomo-tracking-id='{{ $.Site.Param "matomo.id" }}' src="{{ $trackingScript.RelPermalink }}" integrity="{{ $trackingScript.Data.Integrity }}"></script>
+<script data-id="matomo-tracking" data-matomo-tracking-url='{{ $.Site.Params.matomo.url }}' data-matomo-tracking-id='{{ $.Site.Params.matomo.id }}' src="{{ $trackingScript.RelPermalink }}" integrity="{{ $trackingScript.Data.Integrity }}"></script>
 {{- end -}}
