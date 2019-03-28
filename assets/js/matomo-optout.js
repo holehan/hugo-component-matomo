@@ -22,11 +22,11 @@ function matomoOptOutTrack() {
  * Deactivate user tracking.
  */
 function matomoOptOutBlock() {
-  url = matomoUrl + '/index.php?module=API&method=AjaxOptOut.doIgnore&format=json';
+  var url = matomoUrl + '/index.php?module=API&method=AjaxOptOut.doIgnore&format=json';
 
   fetchJsonp(url).then(function (response) {
     return response.json();
-  }).then(function (json) {
+  }).then(function () {
     matomoOptOutStatus();
   }).catch(function (ex) {
     console.log('parsing failed', ex);

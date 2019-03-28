@@ -23,11 +23,11 @@ function matomoOptOutTrack() {
  * Deactivate user tracking.
  */
 function matomoOptOutBlock() {
-  url = `${matomoUrl}/index.php?module=API&method=AjaxOptOut.doIgnore&format=json`;
+  const url = `${matomoUrl}/index.php?module=API&method=AjaxOptOut.doIgnore&format=json`;
 
   fetchJsonp(url)
     .then(response => response.json())
-    .then(json => {
+    .then(() => {
       matomoOptOutStatus();
     })
     .catch(ex => {
