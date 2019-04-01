@@ -15,6 +15,12 @@
 git submodule add https://github.com/holehan/hugo-components-matomo.git themes/matomo
 ```
 
+### Update component
+
+```sh
+git submodule update --remote themes/matomo
+```
+
 ## Usage
 
 - Add the matomo components to your Hugo project's config.toml:
@@ -43,6 +49,13 @@ Add the matomo server url and your site's tracking id to your Hugo project's par
 [params.matomo]
 url = "https://example.org"
 id = 1
+```
+
+The scripts and styles are fingerprinted, and [SRI](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) is applied by default. If you want to disable SRI (e.g. in case your webhoster optimzes your assets automagically), add the following to your matomo config in `config.toml`:
+
+```toml
+[params.matomo]
+disableSRI = true
 ```
 
 ### Configure optout
@@ -76,11 +89,19 @@ The generated HTML will look like below.
 
 ```html
 <div class="MatomoOptout">
-<script ...></script>
-<div class="MatomoOptout-message MatomoOptout-message--track is-hidden">You are being watched.</div>
-<div class="MatomoOptout-message MatomoOptout-message--block">You are not tracked.</div>
-<button class="MatomoOptout-button MatomoOptout-button--track">Allow tracking</button>
-<button class="MatomoOptout-button MatomoOptout-button--block">Disable tracking</button>
+  <script ...></script>
+  <div class="MatomoOptout-message MatomoOptout-message--track is-hidden">
+    You are being watched.
+  </div>
+  <div class="MatomoOptout-message MatomoOptout-message--block">
+    You are not tracked.
+  </div>
+  <button class="MatomoOptout-button MatomoOptout-button--track">
+    Allow tracking
+  </button>
+  <button class="MatomoOptout-button MatomoOptout-button--block">
+    Disable tracking
+  </button>
 </div>
 ```
 
