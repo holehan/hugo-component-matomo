@@ -13,10 +13,10 @@
 {{- end -}}
 {{- else -}}
 {{ $matomoOptoutBundle := slice $fetchJsonp $matomoOptout | resources.Concat "js/matomo-optout.js" | minify | fingerprint }}
-<script data-id="matomo-optout" data-matomo-optout-url="{{ $.Site.Params.matomo.url }}" src="{{ $matomoOptoutBundle.RelPermalink }}" integrity="{{ $matomoOptoutBundle.Data.Integrity }}" async></script>
+<script data-id="matomo-optout" data-matomo-optout-url="{{ $.Site.Params.matomo.url }}" src="{{ $matomoOptoutBundle.RelPermalink }}" integrity="{{ $matomoOptoutBundle.Data.Integrity }}" crossorigin="anonymous" async></script>
 {{- if ne $.Site.Params.matomo.stylefromassets false -}}
 {{ $matomoStyle := resources.Get "css/matomo-optout.css" | minify | fingerprint }}
-<link rel="stylesheet" href="{{ $matomoStyle.RelPermalink }}" integrity="{{ $matomoStyle.Data.Integrity }}">
+<link rel="stylesheet" href="{{ $matomoStyle.RelPermalink }}" integrity="{{ $matomoStyle.Data.Integrity }}" crossorigin="anonymous">
 {{- end -}}
 {{ end }}
 <div class="MatomoOptout-message MatomoOptout-message--track is-hidden">{{ $.Page.Param "matomo.track.message" | default "You are being watched." | markdownify }}</div>
