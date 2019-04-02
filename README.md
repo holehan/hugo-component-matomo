@@ -4,7 +4,7 @@
 
 ## Requirements
 
-- [Hugo](https://gohugo.io) v0.47 or higher
+- [Hugo](https://gohugo.io) extended v0.47 or higher
 - [Matomo Analytics](https://matomo.org/) with marketplace/plugin access
 - Matomo plugin [Ajax Opt Out](https://plugins.matomo.org/AjaxOptOut)
 - A modern webbrowser with JS and [Promises](https://caniuse.com/#feat=promises) support. Although not modern, IE11 (IE10 even?) is supported with the [es6-promise polyfill](https://github.com/stefanpenner/es6-promise).
