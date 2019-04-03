@@ -19,7 +19,6 @@ _paq.push(['enableLinkTracking']);
   const s = d.getElementsByTagName('script')[0];
 
   g.type = 'text/javascript';
-  g.async = true;
   g.defer = true;
   g.src = `${matomoUrl}/piwik.js`;
   s.parentNode.insertBefore(g, s);
