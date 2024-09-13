@@ -1,0 +1,9 @@
+[matomo_track_button]
+  other="Allow Analysis"
+[matomo_track_message]
+  other="Thanks for providing analysis data and helping me make the blog better!"
+[matomo_block_button]
+  other="Disallow Analysis"
+[matomo_block_message]
+  other="Unfortunately you do not allow me to use your data for improving the blog."
+

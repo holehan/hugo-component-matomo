@@ -19,8 +19,8 @@
 <link rel="stylesheet" href="{{ $matomoStyle.RelPermalink }}" {{ if not $.Site.Params.matomo.disableSRI }}integrity="{{ $matomoStyle.Data.Integrity }}" crossorigin="anonymous"{{ end }}>
 {{- end -}}
 {{ end }}
-<div class="MatomoOptout-message MatomoOptout-message--track is-hidden">{{ $.Page.Param "matomo.track.message" | default "You are being watched." | markdownify }}</div>
-<div class="MatomoOptout-message MatomoOptout-message--block">{{ $.Page.Param "matomo.block.message" | default "You are not tracked." | markdownify }}</div>
-<button class="MatomoOptout-button MatomoOptout-button--track">{{ $.Page.Param "matomo.track.button" | default "Allow tracking"}}</button> 
-<button class="MatomoOptout-button MatomoOptout-button--block">{{ $.Page.Param "matomo.block.button" | default "Disable tracking"}}</button>
+<div class="MatomoOptout-message MatomoOptout-message--track is-hidden">{{ i18n "matomo_track_message" | default "You are being watched." | markdownify }}</div>
+<div class="MatomoOptout-message MatomoOptout-message--block">{{ i18n "matomo_block_message" | default "You are not tracked." | markdownify }}</div>
+<button class="MatomoOptout-button MatomoOptout-button--track">{{ i18n "matomo_track_button" | default "Allow tracking"}}</button> 
+<button class="MatomoOptout-button MatomoOptout-button--block">{{ i18n "matomo_block_button" | default "Disable tracking"}}</button>
 </div>
